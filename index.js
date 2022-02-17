@@ -28,8 +28,8 @@ const data= [
     },
     {
         id : 3,
-        img : '/css/Screen Shot 2022-02-10 at 3.17.56 pm.png',
-        name : 'Lolita Dress',
+        img : '/css/Screen Shot 2022-02-11 at 10.56.42 am.png',
+        name : 'Andi Dress',
         price : 180,
         save : 20,
         delievery : 'In 3 - 4 days',
@@ -76,29 +76,26 @@ const data= [
 let cartList=[]; //array to store cart lists
 
 var i;
-var detail =document.getElementsByClassName('card-item');
-var detailsImg = document.getElementById('details-img')
-var detailTitle = document.getElementById('detail-title')
-var detailPrice = document.getElementById('detail-price')
-var youSave = document.getElementById('you-save');
-var detailsPage = document.getElementById('details-page');
-var back = document.getElementById('buy')
+const detail =document.getElementsByClassName('card-item');
+const detailsImg = document.getElementById('details-img')
+const detailTitle = document.getElementById('detail-title')
+const detailPrice = document.getElementById('detail-price')
+const youSave = document.getElementById('you-save');
+const detailsPage = document.getElementById('details-page');
+const back = document.getElementById('buy')
 back.addEventListener('click',refreshPage)
-var addToCarts = document.querySelectorAll('#add-to-cart')
-var cart = document.getElementById('cart');
+const addToCarts = document.querySelectorAll('#add-to-cart')
+const cart = document.getElementById('cart');
 
 // click event to display cart page
 cart.addEventListener('click',displayCart)
 
-var carts = document.getElementById('carts');
+const carts = document.getElementById('carts');
 
 //click events to add items to cart from details page
 carts.addEventListener('click',()=>addToCart(getId))
 
-var home = document.getElementById('logo');
-
-//click event to hide cart page and return to home page
-// home.addEventListener('click',hideCart);
+const home = document.getElementById('logo');
 
 //events on dynamically created element to remove items from list
 document.addEventListener('click',function (e){
@@ -107,12 +104,6 @@ document.addEventListener('click',function (e){
         removeFromCart(itemId)
     }
 })
-
-
-//click event to display details page
-// for(i=0;i<data.length;i++){
-//     detail[i].addEventListener('click',handleDetail)
-// }
 
 var getId;
 
@@ -180,41 +171,41 @@ function addItem(){
     totalAmount=0;
     totalItems = 0;
     totalSaving=0
-    var clrNode=document.getElementById('item-body');
+    const clrNode=document.getElementById('item-body');
         clrNode.innerHTML= '';
         console.log(clrNode.childNodes)
         cartList.map((cart)=>
         {
-            var cartCont = document.getElementById('item-body');
+            const cartCont = document.getElementById('item-body');
             totalAmount = totalAmount + cart.price;
             totalSaving = totalSaving + cart.save;
             totalItems = totalItems + 1;
 
-            var tempCart = document.createElement('div')
+            const tempCart = document.createElement('div')
             tempCart.setAttribute('class','cart-list');
             tempCart.setAttribute('id',cart.id);
 
-            var listImg = document.createElement('img');
+            const listImg = document.createElement('img');
             listImg.setAttribute('id','list-img');
             listImg.src = cart.img
             tempCart.appendChild(listImg)
 
-            var listName = document.createElement('h3');
+            const listName = document.createElement('h3');
             listName.setAttribute('class','list-name');
             listName.innerHTML = cart.name;
             tempCart.appendChild(listName)
 
-            var listPay = document.createElement('h3');
+            const listPay = document.createElement('h3');
             listPay.setAttribute('class','pay');
             listPay.innerHTML = cart.price;
             tempCart.appendChild(listPay);
 
-            var listQuantity = document.createElement('h3');
+            const listQuantity = document.createElement('h3');
             listQuantity.setAttribute('class','quantity');
             listQuantity.innerHTML = '1';
             tempCart.appendChild(listQuantity);
 
-            var listTrash = document.createElement('i');
+            const listTrash = document.createElement('i');
             listTrash.setAttribute('class','fa fa-trash ');
             listTrash.setAttribute('id','remove');
             tempCart.appendChild(listTrash);
