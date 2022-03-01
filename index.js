@@ -82,8 +82,8 @@ const detailTitle = document.getElementById('detail-title')
 const detailPrice = document.getElementById('detail-price')
 const youSave = document.getElementById('you-save');
 const detailsPage = document.getElementById('details-page');
-const back = document.getElementById('buy')
-back.addEventListener('click',refreshPage)
+//const back = document.getElementById('buy')
+//back.addEventListener('click',refreshPage)
 const addToCarts = document.querySelectorAll('#add-to-cart')
 const cart = document.getElementById('cart');
 
@@ -95,7 +95,7 @@ const carts = document.getElementById('carts');
 //click events to add items to cart from details page
 carts.addEventListener('click',()=>addToCart(getId))
 
-const home = document.getElementById('logo');
+//const home = document.getElementById('logo');
 
 //events on dynamically created element to remove items from list
 document.addEventListener('click',function (e){
@@ -126,11 +126,11 @@ function addToCart(id) {
         cartList= [...cartList,data[id]];
         addItem()
         
-        alert('Item added to your cart')
+        alert('Product added to your cart')
 
     }
     else{
-        alert('Your item is already there')
+        alert('Your product is already there')
     }
     data[id].itemInCart= true
 }
